@@ -1,1815 +1,241 @@
 <!doctype html>
-<html lang="id">
- <head>
+<html lang="id" class="h-full">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Explore Garut - Premium Tourism Destination in West Java</title>
-  <meta name="description" content="Discover breathtaking destinations, authentic culture, and unforgettable experiences in Garut, West Java. Your premium gateway to Indonesian natural wonders.">
-  <meta name="keywords" content="Garut tourism, West Java travel, Indonesian destinations, Garut attractions, mountain resort">
+  <title>Portofolio Madya - Muhammad Riky Praja Madya</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="/_sdk/element_sdk.js"></script>
-  <script src="/_sdk/data_sdk.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      box-sizing: border-box;
-    }
-    
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Merriweather:wght@300;400;700;900&display=swap');
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-    
-    :root {
-      --primary: #0ea5e9;
-      --secondary: #0284c7;
-      --accent: #f59e0b;
-      --dark: #0f172a;
-      --light: #f8fafc;
-      --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-      --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    }
-    
-    body {
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      overflow-x: hidden;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    
-    body.dark-mode {
-      background-color: #0f172a;
-      color: #e2e8f0;
-    }
-    
-    .font-serif {
-      font-family: 'Merriweather', serif;
-    }
-    
-    /* Navbar Styles */
-    .navbar {
-      backdrop-filter: blur(20px) saturate(180%);
-      background: rgba(255, 255, 255, 0.92);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    body.dark-mode .navbar {
-      background: rgba(15, 23, 42, 0.92);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .navbar.scrolled {
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-    }
-    
-    /* Hero Video Background */
-    .hero-section {
-      position: relative;
-      height: 100%;
-      min-height: 600px;
+    body { box-sizing: border-box; }
+    * { scroll-behavior: smooth; }
+    .font-poppins { font-family: 'Poppins', sans-serif; }
+    .font-playfair { font-family: 'Playfair Display', serif; }
+    .gradient-text {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      overflow: hidden;
-    }
-    
-    .video-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%);
-      z-index: 1;
-    }
-    
-    .hero-content {
-      position: relative;
-      z-index: 2;
-    }
-    
-    /* Parallax Effect */
-    .parallax {
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      position: relative;
-    }
-    
-    /* Animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    
-    @keyframes slideInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-100px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-    
-    @keyframes slideInRight {
-      from {
-        opacity: 0;
-        transform: translateX(100px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-    
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-20px); }
-    }
-    
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
-    
-    .animate-on-scroll {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    
-    .animate-on-scroll.animated {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    .float-animation {
-      animation: float 4s ease-in-out infinite;
-    }
-    
-    /* Card Styles */
-    .card-premium {
-      background: white;
-      border-radius: 24px;
-      overflow: hidden;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    }
-    
-    body.dark-mode .card-premium {
-      background: #1e293b;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    }
-    
-    .card-premium:hover {
-      transform: translateY(-12px) scale(1.02);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-    }
-    
-    /* Sidebar */
-    .sidebar {
-      position: fixed;
-      right: -400px;
-      top: 0;
-      width: 400px;
-      height: 100%;
-      background: white;
-      box-shadow: -10px 0 40px rgba(0, 0, 0, 0.2);
-      transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      z-index: 9999;
-      overflow-y: auto;
-    }
-    
-    body.dark-mode .sidebar {
-      background: #1e293b;
-    }
-    
-    .sidebar.active {
-      right: 0;
-    }
-    
-    .sidebar-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(4px);
-      z-index: 9998;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-    }
-    
-    .sidebar-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-    
-    /* Search Bar */
-    .search-enhanced {
-      position: relative;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    
-    .search-enhanced input {
-      width: 100%;
-      padding: 20px 70px 20px 60px;
-      border-radius: 60px;
-      border: none;
-      font-size: 18px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-      transition: all 0.3s ease;
-    }
-    
-    .search-enhanced input:focus {
-      outline: none;
-      box-shadow: 0 15px 60px rgba(0, 0, 0, 0.25);
-    }
-    
-    /* Chatbot */
-    .chatbot-widget {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      z-index: 9000;
-    }
-    
-    .chatbot-button {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      animation: pulse 2s infinite;
-    }
-    
-    .chatbot-button:hover {
-      transform: scale(1.1);
-      box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
-    }
-    
-    .chatbot-window {
-      position: fixed;
-      bottom: 120px;
-      right: 30px;
-      width: 400px;
-      height: 600px;
-      background: white;
-      border-radius: 24px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      display: none;
-      flex-direction: column;
-      z-index: 9001;
-      overflow: hidden;
-    }
-    
-    body.dark-mode .chatbot-window {
-      background: #1e293b;
-    }
-    
-    .chatbot-window.active {
-      display: flex;
-      animation: fadeInUp 0.4s ease;
-    }
-    
-    /* Counter Animation */
-    .stat-number {
-      font-size: 3.5rem;
-      font-weight: 900;
-      background: var(--gradient-3);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    
-    /* Testimonial Carousel */
-    .testimonial-slider {
-      display: flex;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-      gap: 24px;
+    .hero-gradient { background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); }
+    .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px -12px rgba(102, 126, 234, 0.25);
     }
-    
-    .testimonial-card {
-      min-width: 100%;
-      flex-shrink: 0;
-      transition: transform 0.5s ease;
+    .skill-bar {
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+      transition: width 1s ease-out;
     }
-    
-    /* Weather Widget */
-    .weather-card {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      border-radius: 24px;
-      padding: 32px;
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .weather-card::before {
+    .nav-link { position: relative; }
+    .nav-link::after {
       content: '';
       position: absolute;
-      top: -50%;
-      right: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-      animation: float 8s ease-in-out infinite;
-    }
-    
-    /* Video Modal */
-    .video-modal {
-      position: fixed;
-      top: 0;
+      bottom: -4px;
       left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.95);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 10000;
-      backdrop-filter: blur(10px);
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      transition: width 0.3s ease;
     }
-    
-    .video-modal.active {
-      display: flex;
-      animation: fadeIn 0.3s ease;
+    .nav-link:hover::after { width: 100%; }
+    .floating { animation: floating 3s ease-in-out infinite; }
+    @keyframes floating {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
     }
-    
-    .video-container {
-      position: relative;
-      width: 90%;
-      max-width: 1200px;
-      aspect-ratio: 16/9;
-      background: #000;
-      border-radius: 16px;
-      overflow: hidden;
+    .fade-in { animation: fadeIn 0.8s ease-out forwards; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    
-    /* Share Buttons */
-    .share-buttons {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
+    .pulse-ring { animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+    @keyframes pulse-ring {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
     }
-    
-    .share-btn {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-    
-    .share-btn:hover {
-      transform: translateY(-5px) scale(1.1);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    }
-    
-    .share-btn.facebook { background: #1877f2; }
-    .share-btn.twitter { background: #1da1f2; }
-    .share-btn.whatsapp { background: #25d366; }
-    .share-btn.instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-    .share-btn.linkedin { background: #0077b5; }
-    
-    /* Map Container */
-    .map-container {
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-    }
-    
-    /* Language Switcher */
-    .lang-switcher {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 16px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 50px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    
-    .lang-switcher:hover {
-      background: rgba(255, 255, 255, 0.2);
-    }
-    
-    /* Gradient Text */
-    .gradient-text {
-      background: var(--gradient-3);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    
-    /* Loading State */
-    .loading {
-      pointer-events: none;
-      opacity: 0.6;
-    }
-    
-    .spinner {
-      border: 3px solid rgba(255, 255, 255, 0.3);
-      border-radius: 50%;
-      border-top-color: white;
-      width: 24px;
-      height: 24px;
-      animation: spin 0.8s linear infinite;
-    }
-    
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-    
-    /* Responsive */
-    @media (max-width: 768px) {
-      .sidebar {
-        width: 100%;
-        right: -100%;
-      }
-      
-      .chatbot-window {
-        width: 90%;
-        right: 5%;
-        bottom: 100px;
-      }
-      
-      .stat-number {
-        font-size: 2.5rem;
-      }
-    }
-    
-    /* Smooth Transitions */
-    * {
-      transition-property: background-color, border-color, color, fill, stroke;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 200ms;
+    .timeline-line { background: linear-gradient(180deg, #667eea 0%, #764ba2 100%); }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #f1f1f1; }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #667eea, #764ba2);
+      border-radius: 4px;
     }
   </style>
-  <style>@view-transition { navigation: auto; }</style>
- </head>
- <body><!-- Navbar -->
-  <nav class="navbar fixed w-full top-0 z-50">
-   <div class="max-w-7xl mx-auto px-6 py-4">
-    <div class="flex items-center justify-between"><!-- Logo -->
-     <div class="flex items-center gap-3 cursor-pointer">
-      <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center text-white text-2xl font-bold">
-       G
-      </div><span class="text-2xl font-bold font-serif gradient-text">Explore Garut</span>
-     </div><!-- Desktop Menu -->
-     <div class="hidden lg:flex items-center gap-8"><a href="#home" class="nav-link font-medium hover:text-blue-600 transition">Home</a> <a href="#destinations" class="nav-link font-medium hover:text-blue-600 transition">Destinations</a> <a href="#experiences" class="nav-link font-medium hover:text-blue-600 transition">Experiences</a> <a href="#blog" class="nav-link font-medium hover:text-blue-600 transition">Blog</a> <a href="#contact" class="nav-link font-medium hover:text-blue-600 transition">Contact</a>
-     </div><!-- Right Actions -->
-     <div class="flex items-center gap-4"><!-- Language Switcher -->
-      <div class="lang-switcher" id="langSwitch"><span id="currentLangFlag">🇮🇩</span> <span id="currentLangCode" class="text-sm font-semibold">ID</span>
-      </div><!-- Dark Mode Toggle --> <button id="darkModeToggle" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-slate-700 flex items-center justify-center hover:scale-110 transition"> <i class="fas fa-moon text-gray-700 dark:text-yellow-400"></i> </button> <!-- Sidebar Toggle --> <button id="sidebarToggle" class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center hover:scale-110 transition"> <i class="fas fa-bars"></i> </button>
-     </div>
-    </div>
-   </div>
-  </nav><!-- Sidebar -->
-  <div class="sidebar-overlay" id="sidebarOverlay"></div>
-  <aside class="sidebar" id="sidebar">
-   <div class="p-8"><!-- Close Button --> <button id="closeSidebar" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-gray-100 dark:bg-slate-700 flex items-center justify-center hover:scale-110 transition"> <i class="fas fa-times"></i> </button>
-    <h2 class="text-2xl font-bold mb-6 font-serif">Quick Menu</h2><!-- Navigation Links -->
-    <nav class="space-y-4 mb-8"><a href="#home" class="block py-3 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-700 transition font-medium sidebar-link"> <i class="fas fa-home w-6"></i> Home </a> <a href="#destinations" class="block py-3 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-700 transition font-medium sidebar-link"> <i class="fas fa-map-marked-alt w-6"></i> Destinations </a> <a href="#experiences" class="block py-3 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-700 transition font-medium sidebar-link"> <i class="fas fa-star w-6"></i> Experiences </a> <a href="#tickets" class="block py-3 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-700 transition font-medium sidebar-link"> <i class="fas fa-ticket-alt w-6"></i> Tickets &amp; Schedule </a> <a href="#facilities" class="block py-3 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-700 transition font-medium sidebar-link"> <i class="fas fa-concierge-bell w-6"></i> Facilities </a> <a href="#events" class="block py-3 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-700 transition font-medium sidebar-link"> <i class="fas fa-calendar-alt w-6"></i> Events </a> <a href="#blog" class="block py-3 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-700 transition font-medium sidebar-link"> <i class="fas fa-blog w-6"></i> Blog </a> <a href="#contact" class="block py-3 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-700 transition font-medium sidebar-link"> <i class="fas fa-envelope w-6"></i> Contact </a>
-    </nav><!-- Weather Info in Sidebar -->
-    <div class="weather-card mt-8">
-     <div class="relative z-10">
-      <div class="flex items-center justify-between mb-4">
-       <div>
-        <p class="text-sm opacity-90">Current Weather</p>
-        <p class="text-2xl font-bold">Garut, ID</p>
-       </div>
-       <div class="text-5xl">
-        ⛅
-       </div>
-      </div>
-      <div class="text-5xl font-bold mb-2">
-       24°C
-      </div>
-      <p class="text-sm opacity-90">Partly Cloudy</p>
-      <div class="grid grid-cols-2 gap-4 mt-4 pt-4 border-t border-white/20">
-       <div>
-        <p class="text-xs opacity-75">Humidity</p>
-        <p class="text-lg font-semibold">68%</p>
-       </div>
-       <div>
-        <p class="text-xs opacity-75">Wind</p>
-        <p class="text-lg font-semibold">15 km/h</p>
-       </div>
-      </div>
-     </div>
-    </div><!-- Social Media -->
-    <div class="mt-8">
-     <p class="text-sm font-semibold mb-4">Follow Us</p>
-     <div class="flex gap-3"><a href="#" class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white hover:scale-110 transition"> <i class="fab fa-facebook-f"></i> </a> <a href="#" class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-white hover:scale-110 transition"> <i class="fab fa-instagram"></i> </a> <a href="#" class="w-10 h-10 rounded-full bg-blue-400 flex items-center justify-center text-white hover:scale-110 transition"> <i class="fab fa-twitter"></i> </a> <a href="#" class="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white hover:scale-110 transition"> <i class="fab fa-youtube"></i> </a>
-     </div>
-    </div>
-   </div>
-  </aside><!-- Hero Section -->
-  <section id="home" class="hero-section flex items-center justify-center text-white pt-20">
-   <div class="video-overlay"></div>
-   <div class="hero-content container mx-auto px-6 py-32 text-center">
-    <div class="max-w-4xl mx-auto">
-     <h1 id="mainTitle" class="text-5xl md:text-7xl font-bold mb-6 font-serif animate-on-scroll" style="animation: fadeInUp 1s ease forwards;">Explore Garut</h1>
-     <p id="heroTagline" class="text-xl md:text-2xl mb-8 opacity-95 animate-on-scroll" style="animation: fadeInUp 1s ease 0.2s forwards; opacity: 0;">Discover the Hidden Gems of West Java</p><!-- Search Bar -->
-     <div class="search-enhanced mb-12 animate-on-scroll" style="animation: fadeInUp 1s ease 0.4s forwards; opacity: 0;">
-      <div class="relative"><i class="fas fa-search absolute left-6 top-1/2 -translate-y-1/2 text-gray-400 text-xl"></i> <input type="text" id="heroSearch" placeholder="Search destinations, experiences, activities..." class="text-gray-800"> <button onclick="performSearch()" class="absolute right-3 top-1/2 -translate-y-1/2 bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition"> Search </button>
-      </div>
-     </div>
-     <div class="flex flex-wrap gap-4 justify-center animate-on-scroll" style="animation: fadeInUp 1s ease 0.6s forwards; opacity: 0;"><a href="#destinations" id="ctaButton" class="px-8 py-4 bg-white text-blue-600 rounded-full font-semibold text-lg hover:shadow-2xl hover:scale-105 transition"> Start Exploring </a> <button onclick="openVideoModal()" class="px-8 py-4 border-2 border-white rounded-full font-semibold text-lg hover:bg-white hover:text-blue-600 transition flex items-center gap-2"> <i class="fas fa-play"></i> Watch Video </button>
-     </div><!-- Quick Stats -->
-     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 animate-on-scroll" style="animation: fadeInUp 1s ease 0.8s forwards; opacity: 0;">
-      <div class="text-center">
-       <div class="text-4xl font-bold mb-2 counter-stat" data-target="50">
-        0
-       </div>
-       <p class="text-sm opacity-90">Destinations</p>
-      </div>
-      <div class="text-center">
-       <div class="text-4xl font-bold mb-2 counter-stat" data-target="15000">
-        0
-       </div>
-       <p class="text-sm opacity-90">Monthly Visitors</p>
-      </div>
-      <div class="text-center">
-       <div class="text-4xl font-bold mb-2 counter-stat" data-target="850">
-        0
-       </div>
-       <p class="text-sm opacity-90">5-Star Reviews</p>
-      </div>
-      <div class="text-center">
-       <div class="text-4xl font-bold mb-2 counter-stat" data-target="30">
-        0
-       </div>
-       <p class="text-sm opacity-90">Annual Events</p>
-      </div>
-     </div>
-    </div>
-   </div><!-- Scroll Indicator -->
-   <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce"><i class="fas fa-chevron-down text-3xl"></i>
-   </div>
-  </section><!-- About Section -->
-  <section id="about" class="py-24 bg-white dark:bg-slate-900">
-   <div class="max-w-7xl mx-auto px-6">
-    <div class="grid md:grid-cols-2 gap-16 items-center">
-     <div class="animate-on-scroll"><span class="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm font-semibold mb-6"> ABOUT GARUT </span>
-      <h2 id="aboutHeading" class="text-4xl md:text-5xl font-bold mb-6 font-serif">Welcome to Garut</h2>
-      <p class="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">Nestled in the heart of West Java, Garut is a breathtaking destination where nature's magnificence meets rich cultural heritage. From volcanic peaks and hot springs to pristine lakes and ancient temples, Garut offers an unparalleled journey for the adventurous soul.</p>
-      <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">Experience authentic Indonesian hospitality, savor world-renowned culinary delights like dodol Garut and succulent lamb, and immerse yourself in traditions that have been preserved for centuries.</p><!-- Key Features -->
-      <div class="grid grid-cols-2 gap-4 mb-8">
-       <div class="flex items-center gap-3">
-        <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center"><i class="fas fa-mountain text-blue-600 text-xl"></i>
+</head>
+<body class="h-full font-poppins bg-gray-50 text-gray-800">
+  <div id="app-wrapper" class="w-full h-full overflow-auto">
+    <!-- Header/Navigation -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300">
+      <nav class="max-w-6xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <a href="#home" class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full hero-gradient flex items-center justify-center text-white font-bold text-lg">M</div>
+            <span class="font-playfair text-xl font-bold gradient-text">Portofolio Madya</span>
+          </a>
+          <div class="hidden md:flex items-center gap-8">
+            <a href="#home" class="nav-link text-gray-700 hover:text-purple-600 font-medium transition-colors">Home</a>
+            <a href="#about" class="nav-link text-gray-700 hover:text-purple-600 font-medium transition-colors">About</a>
+            <a href="#skills" class="nav-link text-gray-700 hover:text-purple-600 font-medium transition-colors">Skills</a>
+            <a href="#portfolio" class="nav-link text-gray-700 hover:text-purple-600 font-medium transition-colors">Portfolio</a>
+            <a href="#experience" class="nav-link text-gray-700 hover:text-purple-600 font-medium transition-colors">Experience</a>
+            <a href="#contact" class="nav-link text-gray-700 hover:text-purple-600 font-medium transition-colors">Contact</a>
+          </div>
+          <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button>
         </div>
-        <div>
-         <p class="font-semibold">Natural Beauty</p>
-         <p class="text-sm text-gray-500">Stunning landscapes</p>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+      <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute -top-40 -right-40 w-80 h-80 bg-purple-200 rounded-full opacity-30 blur-3xl"></div>
+        <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-indigo-200 rounded-full opacity-30 blur-3xl"></div>
+      </div>
+      <div class="max-w-6xl mx-auto px-6 py-20 relative z-10">
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+          <div class="flex-1 text-center lg:text-left fade-in">
+            <p class="text-purple-600 font-semibold text-lg mb-4">👋 Halo Pemimpin Bangsa 2030</p>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Saya <span class="gradient-text font-playfair">Muhammad Riky Praja Madya</span></h1>
+            <p class="text-xl md:text-2xl text-gray-600 mb-8">Pelajar & Calon Pemimpin Masa Depan</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <a href="#portfolio" class="px-8 py-4 hero-gradient text-white font-semibold rounded-full hover:shadow-lg hover:shadow-purple-300 transition-all duration-300 text-center">📂 Lihat Portofolio</a>
+              <a href="#contact" class="px-8 py-4 border-2 border-purple-500 text-purple-600 font-semibold rounded-full hover:bg-purple-50 transition-all duration-300 text-center">📧 Hubungi Saya</a>
+            </div>
+          </div>
+          <div class="flex-1 flex justify-center">
+            <div class="relative floating">
+              <div class="w-64 h-64 md:w-80 md:h-80 rounded-full hero-gradient p-1 shadow-2xl">
+                <div class="w-full h-full rounded-full bg-white overflow-hidden">
+                  <!-- IMAGE: Profile Photo -->
+                  <img src="https://raw.githubusercontent.com/cocoy1518-blip/Portofolio/refs/heads/main/RONALDO.jpg" alt="Profile Riky" class="w-full h-full object-cover">
+                </div>
+              </div>
+              <div class="absolute -top-4 -right-4 w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-2xl pulse-ring">⚡</div>
+              <div class="absolute -bottom-4 -left-4 w-12 h-12 bg-green-400 rounded-full flex items-center justify-center text-2xl pulse-ring">🎯</div>
+            </div>
+          </div>
         </div>
-       </div>
-       <div class="flex items-center gap-3">
-        <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center"><i class="fas fa-spa text-purple-600 text-xl"></i>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <span class="text-purple-600 font-semibold text-sm uppercase tracking-wider">Tentang Saya</span>
+          <h2 class="text-3xl md:text-4xl font-bold mt-2 font-playfair">Kenali Saya Lebih Dekat</h2>
+          <div class="w-20 h-1 hero-gradient mx-auto mt-4 rounded-full"></div>
         </div>
-        <div>
-         <p class="font-semibold">Hot Springs</p>
-         <p class="text-sm text-gray-500">Therapeutic waters</p>
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="relative">
+            <div class="bg-gradient-to-br from-purple-100 to-pink-100 rounded-3xl p-4 relative overflow-hidden group">
+              <!-- IMAGE: Education/School Themed Image -->
+              <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=1000" alt="Education" class="rounded-2xl shadow-xl transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-purple-900/60 to-transparent flex items-end p-8">
+                <div class="text-white">
+                  <h3 class="text-2xl font-bold">SMAN 1 Subang</h3>
+                  <p class="opacity-90">Siswa Aktif & Berprestasi</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="text-gray-600 text-lg leading-relaxed mb-6">Halo! Saya seorang siswa di <strong class="text-purple-600">SMAN 1 Subang</strong> yang sangat antusias dengan belajar! Saya aktif dalam berbagai ekstrakurikuler. Salah satu pencapaian yang paling berkesan bagi saya adalah meraih <strong class="text-purple-600">Juara 1 Futsal tingkat Provinsi</strong> pertama bagi tim futsal SMAN 1 Subang.</p>
+            <div class="mb-8">
+              <h4 class="font-bold text-gray-800 mb-4 flex items-center gap-2"><span class="text-2xl">🎯</span> Minat & Tujuan</h4>
+              <p class="text-gray-600">Saya berminat untuk melanjutkan studi di <strong class="text-purple-600">Universitas Madinah</strong>, Arab Saudi untuk memperdalam ilmu agama dan pengetahuan.</p>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-800 mb-4 flex items-center gap-2"><span class="text-2xl">📚</span> Riwayat Pendidikan</h4>
+              <div class="relative pl-10">
+                <div class="absolute left-5 top-0 bottom-0 w-0.5 timeline-line"></div>
+                <div class="space-y-4">
+                  <div class="relative flex items-center gap-4">
+                    <div class="absolute -left-5 w-3 h-3 bg-purple-600 rounded-full"></div>
+                    <div class="bg-purple-50 rounded-lg p-3 flex-1"><span class="font-semibold text-purple-600">SMA</span> - SMAN 1 Subang</div>
+                  </div>
+                  <div class="relative flex items-center gap-4">
+                    <div class="absolute -left-5 w-3 h-3 bg-purple-400 rounded-full"></div>
+                    <div class="bg-purple-50 rounded-lg p-3 flex-1"><span class="font-semibold text-purple-600">SMP</span> - SMPN 1 Subang</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-       </div>
-       <div class="flex items-center gap-3">
-        <div class="w-12 h-12 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center"><i class="fas fa-utensils text-orange-600 text-xl"></i>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <span class="text-purple-600 font-semibold text-sm uppercase tracking-wider">Portofolio</span>
+          <h2 class="text-3xl md:text-4xl font-bold mt-2 font-playfair">Karya & Proyek Saya</h2>
+          <div class="w-20 h-1 hero-gradient mx-auto mt-4 rounded-full"></div>
         </div>
-        <div>
-         <p class="font-semibold">Local Cuisine</p>
-         <p class="text-sm text-gray-500">Authentic flavors</p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1 -->
+          <div class="bg-white rounded-3xl overflow-hidden shadow-lg card-hover border border-gray-100">
+            <div class="h-48 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=800" alt="Futsal" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+              <span class="text-xs font-semibold text-purple-600 bg-purple-100 px-3 py-1 rounded-full">Olahraga</span>
+              <h3 class="text-xl font-bold mt-3 mb-2">Juara 1 Futsal Provinsi</h3>
+              <p class="text-gray-600 text-sm mb-4">Membawa nama SMAN 1 Subang menjadi yang terbaik di Jawa Barat.</p>
+              <div class="flex items-center gap-2 text-purple-600 font-medium text-sm"><span>Lihat Detail</span><svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></div>
+            </div>
+          </div>
+          <!-- Project 2 -->
+          <div class="bg-white rounded-3xl overflow-hidden shadow-lg card-hover border border-gray-100">
+            <div class="h-48 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1461896756913-c23ee5320c75?auto=format&fit=crop&q=80&w=800" alt="Athletic" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+              <span class="text-xs font-semibold text-green-600 bg-green-100 px-3 py-1 rounded-full">Atletik</span>
+              <h3 class="text-xl font-bold mt-3 mb-2">Ketua Ekskul Atletik</h3>
+              <p class="text-gray-600 text-sm mb-4">Memimpin pengembangan bakat atlet muda di lingkungan sekolah.</p>
+              <div class="flex items-center gap-2 text-green-600 font-medium text-sm"><span>Lihat Detail</span><svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></div>
+            </div>
+          </div>
+          <!-- Project 3 -->
+          <div class="bg-white rounded-3xl overflow-hidden shadow-lg card-hover border border-gray-100">
+            <div class="h-48 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&q=80&w=800" alt="Football" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+              <span class="text-xs font-semibold text-orange-600 bg-orange-100 px-3 py-1 rounded-full">Tim</span>
+              <h3 class="text-xl font-bold mt-3 mb-2">Tim Sepakbola</h3>
+              <p class="text-gray-600 text-sm mb-4">Aktif berkompetisi dan menjaga sportivitas dalam setiap pertandingan.</p>
+              <div class="flex items-center gap-2 text-orange-600 font-medium text-sm"><span>Lihat Detail</span><svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></div>
+            </div>
+          </div>
         </div>
-       </div>
-       <div class="flex items-center gap-3">
-        <div class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center"><i class="fas fa-landmark text-green-600 text-xl"></i>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <div class="flex items-center justify-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-full hero-gradient flex items-center justify-center text-white font-bold">M</div>
+          <span class="font-playfair text-xl font-bold">Portofolio Madya</span>
         </div>
-        <div>
-         <p class="font-semibold">Rich Culture</p>
-         <p class="text-sm text-gray-500">Ancient heritage</p>
+        <p class="text-gray-400 mb-8 max-w-md mx-auto">Siswa SMAN 1 Subang yang bersemangat untuk menjadi pemimpin masa depan bangsa.</p>
+        <div class="flex justify-center gap-6">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">Instagram</a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">WhatsApp</a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">Email</a>
         </div>
-       </div>
-      </div><button class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-2xl hover:scale-105 transition"> Learn More About Us </button>
-     </div>
-     <div class="animate-on-scroll">
-      <div class="relative">
-       <div class="absolute -top-6 -left-6 w-full h-full bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl -z-10"></div>
-       <div class="bg-gradient-to-br from-blue-400 to-purple-500 rounded-3xl h-96 flex items-center justify-center text-white text-8xl float-animation">
-        🏔️
-       </div>
+        <p class="mt-12 text-sm text-gray-500">© 2024 Muhammad Riky Praja Madya. All rights reserved.</p>
       </div>
-     </div>
-    </div>
-   </div>
-  </section><!-- Destinations Section with Filter -->
-  <section id="destinations" class="py-24 bg-gray-50 dark:bg-slate-800">
-   <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-16 animate-on-scroll"><span class="inline-block px-4 py-2 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 rounded-full text-sm font-semibold mb-4"> EXPLORE DESTINATIONS </span>
-     <h2 class="text-4xl md:text-5xl font-bold mb-6 font-serif">Popular Destinations</h2>
-     <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">From volcanic wonders to serene lakes, discover the most captivating places Garut has to offer</p>
-    </div><!-- Category Filter -->
-    <div class="flex flex-wrap justify-center gap-4 mb-12 animate-on-scroll"><button class="filter-btn active px-6 py-3 rounded-full font-semibold transition hover:scale-105" data-category="all"> All Destinations </button> <button class="filter-btn px-6 py-3 rounded-full font-semibold transition hover:scale-105" data-category="nature"> 🌿 Nature </button> <button class="filter-btn px-6 py-3 rounded-full font-semibold transition hover:scale-105" data-category="culture"> 🏛️ Culture </button> <button class="filter-btn px-6 py-3 rounded-full font-semibold transition hover:scale-105" data-category="adventure"> ⛰️ Adventure </button> <button class="filter-btn px-6 py-3 rounded-full font-semibold transition hover:scale-105" data-category="culinary"> 🍜 Culinary </button> <button class="filter-btn px-6 py-3 rounded-full font-semibold transition hover:scale-105" data-category="wellness"> 💆 Wellness </button>
-    </div><!-- Destinations Grid -->
-    <div id="destinationsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Dynamically generated destination cards -->
-    </div>
-   </div>
-  </section><!-- Virtual Tour 360 Section -->
-  <section id="virtual-tour" class="py-24 bg-gradient-to-br from-blue-600 to-purple-600 text-white relative overflow-hidden">
-   <div class="absolute inset-0 opacity-10">
-    <div class="absolute top-20 left-20 w-64 h-64 bg-white rounded-full blur-3xl"></div>
-    <div class="absolute bottom-20 right-20 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-   </div>
-   <div class="max-w-7xl mx-auto px-6 relative z-10">
-    <div class="text-center mb-16 animate-on-scroll">
-     <h2 class="text-4xl md:text-5xl font-bold mb-6 font-serif">Virtual Tour 360°</h2>
-     <p class="text-xl opacity-95 max-w-3xl mx-auto">Explore Garut from the comfort of your home with our immersive 360° virtual experience</p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-8 animate-on-scroll">
-     <div class="card-premium bg-white/10 backdrop-blur-lg p-8 text-center cursor-pointer hover:bg-white/20">
-      <div class="text-6xl mb-4">
-       🏔️
-      </div>
-      <h3 class="text-2xl font-bold mb-3">Mountain Views</h3>
-      <p class="opacity-90 mb-4">Experience breathtaking panoramic views of Mount Papandayan</p><button class="text-white font-semibold hover:underline">Start Tour →</button>
-     </div>
-     <div class="card-premium bg-white/10 backdrop-blur-lg p-8 text-center cursor-pointer hover:bg-white/20">
-      <div class="text-6xl mb-4">
-       🏛️
-      </div>
-      <h3 class="text-2xl font-bold mb-3">Cultural Sites</h3>
-      <p class="opacity-90 mb-4">Walk through ancient temples and traditional villages</p><button class="text-white font-semibold hover:underline">Start Tour →</button>
-     </div>
-     <div class="card-premium bg-white/10 backdrop-blur-lg p-8 text-center cursor-pointer hover:bg-white/20">
-      <div class="text-6xl mb-4">
-       💦
-      </div>
-      <h3 class="text-2xl font-bold mb-3">Waterfalls</h3>
-      <p class="opacity-90 mb-4">Discover hidden waterfalls and natural pools</p><button class="text-white font-semibold hover:underline">Start Tour →</button>
-     </div>
-    </div>
-   </div>
-  </section><!-- Experiences Section -->
-  <section id="experiences" class="py-24 bg-white dark:bg-slate-900">
-   <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-16 animate-on-scroll"><span class="inline-block px-4 py-2 bg-orange-100 dark:bg-orange-900 text-orange-600 dark:text-orange-300 rounded-full text-sm font-semibold mb-4"> UNIQUE EXPERIENCES </span>
-     <h2 class="text-4xl md:text-5xl font-bold mb-6 font-serif">What to Do in Garut</h2>
-     <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Create unforgettable memories with curated experiences</p>
-    </div>
-    <div class="grid md:grid-cols-2 gap-8">
-     <div class="card-premium p-8 animate-on-scroll">
-      <div class="h-64 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl mb-6 flex items-center justify-center text-7xl">
-       🎿
-      </div>
-      <h3 class="text-2xl font-bold mb-4">Adventure Activities</h3>
-      <p class="text-gray-600 dark:text-gray-300 mb-6">Hiking, paragliding, rafting, and mountain climbing for thrill-seekers</p>
-      <ul class="space-y-3 mb-6">
-       <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> <span>Mount Papandayan Trekking</span></li>
-       <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> <span>White Water Rafting</span></li>
-       <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> <span>Paragliding Adventures</span></li>
-      </ul><button class="w-full py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-lg font-semibold hover:shadow-lg transition"> Book Experience </button>
-     </div>
-     <div class="card-premium p-8 animate-on-scroll">
-      <div class="h-64 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl mb-6 flex items-center justify-center text-7xl">
-       💆
-      </div>
-      <h3 class="text-2xl font-bold mb-4">Wellness &amp; Relaxation</h3>
-      <p class="text-gray-600 dark:text-gray-300 mb-6">Rejuvenate your body and soul with natural hot springs and spa treatments</p>
-      <ul class="space-y-3 mb-6">
-       <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> <span>Cipanas Hot Springs</span></li>
-       <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> <span>Traditional Spa Treatments</span></li>
-       <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> <span>Yoga &amp; Meditation Retreats</span></li>
-      </ul><button class="w-full py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg font-semibold hover:shadow-lg transition"> Book Experience </button>
-     </div>
-    </div>
-   </div>
-  </section><!-- Tickets & Schedule Section -->
-  <section id="tickets" class="py-24 bg-gray-50 dark:bg-slate-800">
-   <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-16 animate-on-scroll"><span class="inline-block px-4 py-2 bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-300 rounded-full text-sm font-semibold mb-4"> PLAN YOUR VISIT </span>
-     <h2 class="text-4xl md:text-5xl font-bold mb-6 font-serif">Tickets &amp; Schedule</h2>
-     <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Everything you need to know before you visit</p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-8">
-     <div class="card-premium p-8 text-center animate-on-scroll">
-      <div class="w-20 h-20 mx-auto mb-6 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center"><i class="fas fa-clock text-4xl text-blue-600"></i>
-      </div>
-      <h3 class="text-2xl font-bold mb-4">Opening Hours</h3>
-      <div class="text-gray-600 dark:text-gray-300 space-y-2">
-       <p class="flex justify-between"><span>Monday - Friday:</span> <span class="font-semibold">08:00 - 17:00</span></p>
-       <p class="flex justify-between"><span>Saturday - Sunday:</span> <span class="font-semibold">07:00 - 18:00</span></p>
-       <p class="flex justify-between"><span>Public Holidays:</span> <span class="font-semibold">07:00 - 18:00</span></p>
-      </div>
-     </div>
-     <div class="card-premium p-8 text-center animate-on-scroll">
-      <div class="w-20 h-20 mx-auto mb-6 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center"><i class="fas fa-ticket-alt text-4xl text-purple-600"></i>
-      </div>
-      <h3 class="text-2xl font-bold mb-4">Ticket Prices</h3>
-      <div class="text-gray-600 dark:text-gray-300 space-y-2">
-       <p class="flex justify-between"><span>Adults:</span> <span class="font-semibold">Rp 25,000</span></p>
-       <p class="flex justify-between"><span>Children (5-12):</span> <span class="font-semibold">Rp 15,000</span></p>
-       <p class="flex justify-between"><span>Family Package:</span> <span class="font-semibold">Rp 80,000</span></p>
-      </div>
-     </div>
-     <div class="card-premium p-8 text-center animate-on-scroll">
-      <div class="w-20 h-20 mx-auto mb-6 bg-orange-100 dark:bg-orange-900 rounded-full flex items-center justify-center"><i class="fas fa-calendar-check text-4xl text-orange-600"></i>
-      </div>
-      <h3 class="text-2xl font-bold mb-4">Best Time to Visit</h3>
-      <div class="text-gray-600 dark:text-gray-300 space-y-2">
-       <p><span class="font-semibold">Dry Season:</span> Apr - Oct</p>
-       <p><span class="font-semibold">Peak Season:</span> Jun - Aug</p>
-       <p><span class="font-semibold">Recommended:</span> Early morning or late afternoon for best views</p>
-      </div>
-     </div>
-    </div>
-   </div>
-  </section><!-- Facilities Section -->
-  <section id="facilities" class="py-24 bg-white dark:bg-slate-900">
-   <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-16 animate-on-scroll"><span class="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm font-semibold mb-4"> VISITOR SERVICES </span>
-     <h2 class="text-4xl md:text-5xl font-bold mb-6 font-serif">Facilities &amp; Services</h2>
-     <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Comfortable amenities for an exceptional visit</p>
-    </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-     <div class="text-center animate-on-scroll">
-      <div class="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center text-white text-4xl hover:scale-110 transition">
-       🅿️
-      </div>
-      <h4 class="font-bold mb-2">Parking Area</h4>
-      <p class="text-sm text-gray-600 dark:text-gray-300">Secure parking for cars and motorcycles</p>
-     </div>
-     <div class="text-center animate-on-scroll">
-      <div class="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl flex items-center justify-center text-white text-4xl hover:scale-110 transition">
-       🍽️
-      </div>
-      <h4 class="font-bold mb-2">Restaurants</h4>
-      <p class="text-sm text-gray-600 dark:text-gray-300">Local and international cuisine</p>
-     </div>
-     <div class="text-center animate-on-scroll">
-      <div class="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center text-white text-4xl hover:scale-110 transition">
-       🛍️
-      </div>
-      <h4 class="font-bold mb-2">Souvenir Shops</h4>
-      <p class="text-sm text-gray-600 dark:text-gray-300">Local handicrafts and products</p>
-     </div>
-     <div class="text-center animate-on-scroll">
-      <div class="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center text-white text-4xl hover:scale-110 transition">
-       🚻
-      </div>
-      <h4 class="font-bold mb-2">Restrooms</h4>
-      <p class="text-sm text-gray-600 dark:text-gray-300">Clean and accessible facilities</p>
-     </div>
-     <div class="text-center animate-on-scroll">
-      <div class="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl flex items-center justify-center text-white text-4xl hover:scale-110 transition">
-       📶
-      </div>
-      <h4 class="font-bold mb-2">Free WiFi</h4>
-      <p class="text-sm text-gray-600 dark:text-gray-300">Stay connected during your visit</p>
-     </div>
-     <div class="text-center animate-on-scroll">
-      <div class="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl flex items-center justify-center text-white text-4xl hover:scale-110 transition">
-       🏥
-      </div>
-      <h4 class="font-bold mb-2">Medical Center</h4>
-      <p class="text-sm text-gray-600 dark:text-gray-300">First aid and health services</p>
-     </div>
-     <div class="text-center animate-on-scroll">
-      <div class="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-2xl flex items-center justify-center text-white text-4xl hover:scale-110 transition">
-       ℹ️
-      </div>
-      <h4 class="font-bold mb-2">Info Center</h4>
-      <p class="text-sm text-gray-600 dark:text-gray-300">Tourist information and guides</p>
-     </div>
-     <div class="text-center animate-on-scroll">
-      <div class="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-teal-500 to-green-600 rounded-2xl flex items-center justify-center text-white text-4xl hover:scale-110 transition">
-       🏨
-      </div>
-      <h4 class="font-bold mb-2">Accommodations</h4>
-      <p class="text-sm text-gray-600 dark:text-gray-300">Hotels and guesthouses nearby</p>
-     </div>
-    </div>
-   </div>
-  </section><!-- Events Section -->
-  <section id="events" class="py-24 bg-gray-50 dark:bg-slate-800">
-   <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-16 animate-on-scroll"><span class="inline-block px-4 py-2 bg-red-100 dark:bg-red-900 text-red-600 dark:text-red-300 rounded-full text-sm font-semibold mb-4"> UPCOMING EVENTS </span>
-     <h2 class="text-4xl md:text-5xl font-bold mb-6 font-serif">Events &amp; Festivals</h2>
-     <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Join us for exciting cultural celebrations and activities</p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-8">
-     <div class="card-premium overflow-hidden animate-on-scroll">
-      <div class="h-56 bg-gradient-to-br from-red-400 to-pink-500 flex items-center justify-center text-7xl">
-       🎭
-      </div>
-      <div class="p-6">
-       <div class="flex items-center gap-2 mb-3"><span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-600 dark:text-red-300 rounded-full text-xs font-semibold"> 15 DEC 2024 </span>
-       </div>
-       <h3 class="text-2xl font-bold mb-3">Garut Cultural Festival</h3>
-       <p class="text-gray-600 dark:text-gray-300 mb-4">A spectacular celebration of Sundanese culture featuring traditional dance, music performances, and authentic culinary experiences.</p><button class="text-blue-600 font-semibold hover:underline">View Details →</button>
-      </div>
-     </div>
-     <div class="card-premium overflow-hidden animate-on-scroll">
-      <div class="h-56 bg-gradient-to-br from-green-400 to-teal-500 flex items-center justify-center text-7xl">
-       🏃
-      </div>
-      <div class="p-6">
-       <div class="flex items-center gap-2 mb-3"><span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-300 rounded-full text-xs font-semibold"> 1 JAN 2025 </span>
-       </div>
-       <h3 class="text-2xl font-bold mb-3">Mount Papandayan Trail Run</h3>
-       <p class="text-gray-600 dark:text-gray-300 mb-4">Challenge yourself with a scenic mountain trail run featuring breathtaking volcanic landscapes and fresh mountain air.</p><button class="text-blue-600 font-semibold hover:underline">View Details →</button>
-      </div>
-     </div>
-     <div class="card-premium overflow-hidden animate-on-scroll">
-      <div class="h-56 bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center text-7xl">
-       🍲
-      </div>
-      <div class="p-6">
-       <div class="flex items-center gap-2 mb-3"><span class="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-600 dark:text-orange-300 rounded-full text-xs font-semibold"> 20 FEB 2025 </span>
-       </div>
-       <h3 class="text-2xl font-bold mb-3">Garut Food Festival</h3>
-       <p class="text-gray-600 dark:text-gray-300 mb-4">Indulge in a gastronomic journey featuring dodol, lamb satay, and other iconic Garut delicacies from local vendors.</p><button class="text-blue-600 font-semibold hover:underline">View Details →</button>
-      </div>
-     </div>
-    </div>
-   </div>
-  </section><!-- Testimonials Carousel -->
-  <section id="testimonials" class="py-24 bg-white dark:bg-slate-900">
-   <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-16 animate-on-scroll"><span class="inline-block px-4 py-2 bg-yellow-100 dark:bg-yellow-900 text-yellow-600 dark:text-yellow-300 rounded-full text-sm font-semibold mb-4"> VISITOR REVIEWS </span>
-     <h2 class="text-4xl md:text-5xl font-bold mb-6 font-serif">What Travelers Say</h2>
-     <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Real experiences from visitors who explored Garut</p>
-    </div>
-    <div class="relative max-w-5xl mx-auto">
-     <div id="testimonialSlider" class="testimonial-slider"><!-- Testimonials will be dynamically generated -->
-     </div><button id="prevTestimonial" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 w-14 h-14 bg-white dark:bg-slate-800 rounded-full shadow-xl flex items-center justify-center hover:scale-110 transition"> <i class="fas fa-chevron-left text-xl"></i> </button> <button id="nextTestimonial" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 w-14 h-14 bg-white dark:bg-slate-800 rounded-full shadow-xl flex items-center justify-center hover:scale-110 transition"> <i class="fas fa-chevron-right text-xl"></i> </button>
-     <div class="flex justify-center gap-3 mt-8" id="testimonialDots"><!-- Dots will be dynamically generated -->
-     </div>
-    </div>
-   </div>
-  </section><!-- Blog Section -->
-  <section id="blog" class="py-24 bg-gray-50 dark:bg-slate-800">
-   <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-16 animate-on-scroll"><span class="inline-block px-4 py-2 bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-300 rounded-full text-sm font-semibold mb-4"> TRAVEL BLOG </span>
-     <h2 class="text-4xl md:text-5xl font-bold mb-6 font-serif">Travel Guides &amp; Tips</h2>
-     <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Expert advice and insider tips for your Garut adventure</p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-8">
-     <article class="card-premium overflow-hidden animate-on-scroll">
-      <div class="h-56 bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center text-7xl">
-       📸
-      </div>
-      <div class="p-6">
-       <div class="flex items-center gap-3 mb-4"><span class="text-sm text-gray-500">12 Dec 2024</span> <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded text-xs font-semibold">PHOTOGRAPHY</span>
-       </div>
-       <h3 class="text-xl font-bold mb-3 hover:text-blue-600 transition cursor-pointer">10 Instagram-Worthy Spots in Garut You Can't Miss</h3>
-       <p class="text-gray-600 dark:text-gray-300 mb-4">Discover the most photogenic locations from volcanic craters to serene lakes perfect for your social media feed.</p><a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
-      </div>
-     </article>
-     <article class="card-premium overflow-hidden animate-on-scroll">
-      <div class="h-56 bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center text-7xl">
-       🥘
-      </div>
-      <div class="p-6">
-       <div class="flex items-center gap-3 mb-4"><span class="text-sm text-gray-500">10 Dec 2024</span> <span class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-300 rounded text-xs font-semibold">CULINARY</span>
-       </div>
-       <h3 class="text-xl font-bold mb-3 hover:text-blue-600 transition cursor-pointer">Must-Try Local Delicacies: A Food Lover's Guide to Garut</h3>
-       <p class="text-gray-600 dark:text-gray-300 mb-4">From famous dodol sweets to succulent lamb dishes, explore the authentic flavors that make Garut a culinary paradise.</p><a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
-      </div>
-     </article>
-     <article class="card-premium overflow-hidden animate-on-scroll">
-      <div class="h-56 bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center text-7xl">
-       🎒
-      </div>
-      <div class="p-6">
-       <div class="flex items-center gap-3 mb-4"><span class="text-sm text-gray-500">8 Dec 2024</span> <span class="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 rounded text-xs font-semibold">TRAVEL TIPS</span>
-       </div>
-       <h3 class="text-xl font-bold mb-3 hover:text-blue-600 transition cursor-pointer">Budget Traveler's Guide: Exploring Garut Under $50/Day</h3>
-       <p class="text-gray-600 dark:text-gray-300 mb-4">Smart strategies for experiencing Garut's beauty without breaking the bank, including accommodation and food tips.</p><a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
-      </div>
-     </article>
-    </div>
-   </div>
-  </section><!-- Map Section -->
-  <section id="map" class="py-24 bg-white dark:bg-slate-900">
-   <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-16 animate-on-scroll"><span class="inline-block px-4 py-2 bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-300 rounded-full text-sm font-semibold mb-4"> FIND US </span>
-     <h2 class="text-4xl md:text-5xl font-bold mb-6 font-serif">Location &amp; Map</h2>
-     <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Easily locate Garut's top destinations</p>
-    </div>
-    <div class="map-container bg-gradient-to-br from-blue-100 to-purple-100 dark:from-slate-700 dark:to-slate-800 h-96 flex items-center justify-center animate-on-scroll">
-     <div class="text-center">
-      <div class="text-8xl mb-6">
-       🗺️
-      </div>
-      <h3 class="text-3xl font-bold mb-3">Garut, West Java</h3>
-      <p class="text-gray-600 dark:text-gray-300 mb-2">Coordinates: 7.2186° S, 107.9073° E</p>
-      <p class="text-gray-600 dark:text-gray-300">Approximately 2 hours from Bandung</p>
-     </div>
-    </div>
-   </div>
-  </section><!-- Booking Form -->
-  <section id="booking" class="py-24 bg-gradient-to-br from-blue-600 to-purple-600 text-white">
-   <div class="max-w-4xl mx-auto px-6">
-    <div class="text-center mb-12 animate-on-scroll">
-     <h2 class="text-4xl md:text-5xl font-bold mb-6 font-serif">Book Your Experience</h2>
-     <p class="text-xl opacity-95">Reserve your spot for an unforgettable journey in Garut</p>
-    </div>
-    <form id="bookingForm" class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-12 animate-on-scroll">
-     <div class="grid md:grid-cols-2 gap-6 mb-6">
-      <div><label for="bookingName" class="block text-sm font-semibold mb-2">Full Name *</label> <input type="text" id="bookingName" required class="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-white/60 focus:outline-none focus:border-white transition" placeholder="Enter your name">
-      </div>
-      <div><label for="bookingEmail" class="block text-sm font-semibold mb-2">Email Address *</label> <input type="email" id="bookingEmail" required class="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-white/60 focus:outline-none focus:border-white transition" placeholder="your@email.com">
-      </div>
-     </div>
-     <div class="grid md:grid-cols-2 gap-6 mb-6">
-      <div><label for="bookingPhone" class="block text-sm font-semibold mb-2">Phone Number *</label> <input type="tel" id="bookingPhone" required class="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-white/60 focus:outline-none focus:border-white transition" placeholder="+62 xxx xxxx xxxx">
-      </div>
-      <div><label for="bookingDate" class="block text-sm font-semibold mb-2">Visit Date *</label> <input type="date" id="bookingDate" required class="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white focus:outline-none focus:border-white transition">
-      </div>
-     </div>
-     <div class="grid md:grid-cols-2 gap-6 mb-6">
-      <div><label for="bookingDestination" class="block text-sm font-semibold mb-2">Select Destination *</label> <select id="bookingDestination" required class="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white focus:outline-none focus:border-white transition"> <option value="" class="text-gray-800">-- Choose Destination --</option> <option value="papandayan" class="text-gray-800">Mount Papandayan</option> <option value="kamojang" class="text-gray-800">Kawah Kamojang</option> <option value="cangkuang" class="text-gray-800">Candi Cangkuang</option> <option value="cipanas" class="text-gray-800">Cipanas Hot Springs</option> <option value="bagendit" class="text-gray-800">Situ Bagendit</option> </select>
-      </div>
-      <div><label for="bookingGuests" class="block text-sm font-semibold mb-2">Number of Guests *</label> <input type="number" id="bookingGuests" min="1" max="20" required class="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-white/60 focus:outline-none focus:border-white transition" placeholder="e.g., 2">
-      </div>
-     </div>
-     <div class="mb-6"><label for="bookingMessage" class="block text-sm font-semibold mb-2">Special Requests</label> <textarea id="bookingMessage" rows="4" class="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-white/60 focus:outline-none focus:border-white transition" placeholder="Any special requirements or questions?"></textarea>
-     </div><button type="submit" id="bookingSubmitBtn" class="w-full py-4 bg-white text-blue-600 rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition flex items-center justify-center gap-3"> <span>Submit Booking</span> <i class="fas fa-arrow-right"></i> </button>
-     <div id="bookingSuccess" class="hidden mt-6 p-4 bg-green-500 rounded-xl text-center"><i class="fas fa-check-circle text-2xl mb-2"></i>
-      <p class="font-semibold">Booking submitted successfully! We'll contact you shortly.</p>
-     </div>
-    </form>
-   </div>
-  </section><!-- Contact Form -->
-  <section id="contact" class="py-24 bg-white dark:bg-slate-900">
-   <div class="max-w-7xl mx-auto px-6">
-    <div class="grid md:grid-cols-2 gap-16">
-     <div class="animate-on-scroll"><span class="inline-block px-4 py-2 bg-pink-100 dark:bg-pink-900 text-pink-600 dark:text-pink-300 rounded-full text-sm font-semibold mb-6"> GET IN TOUCH </span>
-      <h2 class="text-4xl md:text-5xl font-bold mb-6 font-serif">Contact Us</h2>
-      <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">Have questions? We're here to help plan your perfect Garut adventure. Reach out to our friendly team anytime.</p><!-- Contact Info -->
-      <div class="space-y-6 mb-8">
-       <div class="flex items-start gap-4">
-        <div class="w-14 h-14 bg-blue-100 dark:bg-blue-900 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fas fa-map-marker-alt text-blue-600 text-xl"></i>
-        </div>
-        <div>
-         <h4 class="font-bold text-lg mb-1">Address</h4>
-         <p id="officeAddress" class="text-gray-600 dark:text-gray-300">Jl. Pembangunan No. 88, Garut, West Java 44151, Indonesia</p>
-        </div>
-       </div>
-       <div class="flex items-start gap-4">
-        <div class="w-14 h-14 bg-purple-100 dark:bg-purple-900 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fas fa-envelope text-purple-600 text-xl"></i>
-        </div>
-        <div>
-         <h4 class="font-bold text-lg mb-1">Email</h4>
-         <p id="contactEmailDisplay" class="text-gray-600 dark:text-gray-300">hello@exploregarut.id</p>
-        </div>
-       </div>
-       <div class="flex items-start gap-4">
-        <div class="w-14 h-14 bg-green-100 dark:bg-green-900 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fas fa-phone text-green-600 text-xl"></i>
-        </div>
-        <div>
-         <h4 class="font-bold text-lg mb-1">Phone</h4>
-         <p id="contactPhoneDisplay" class="text-gray-600 dark:text-gray-300">+62 262 2800 888</p>
-        </div>
-       </div>
-      </div><!-- Share Section -->
-      <div>
-       <h4 class="font-bold text-lg mb-4">Share Explore Garut</h4>
-       <div class="share-buttons"><button class="share-btn facebook" onclick="shareToSocial('facebook')" title="Share on Facebook"> <i class="fab fa-facebook-f"></i> </button> <button class="share-btn twitter" onclick="shareToSocial('twitter')" title="Share on Twitter"> <i class="fab fa-twitter"></i> </button> <button class="share-btn whatsapp" onclick="shareToSocial('whatsapp')" title="Share on WhatsApp"> <i class="fab fa-whatsapp"></i> </button> <button class="share-btn instagram" onclick="shareToSocial('instagram')" title="Share on Instagram"> <i class="fab fa-instagram"></i> </button> <button class="share-btn linkedin" onclick="shareToSocial('linkedin')" title="Share on LinkedIn"> <i class="fab fa-linkedin-in"></i> </button>
-       </div>
-      </div>
-     </div><!-- Contact Form -->
-     <form id="contactForm" class="card-premium p-8 animate-on-scroll">
-      <h3 class="text-2xl font-bold mb-6">Send Us a Message &amp; Rate Your Experience</h3>
-      <div class="mb-6"><label for="contactName" class="block text-sm font-semibold mb-2">Your Name *</label> <input type="text" id="contactName" required class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-slate-600 dark:bg-slate-800 focus:outline-none focus:border-blue-500 transition" placeholder="John Doe">
-      </div>
-      <div class="mb-6"><label for="contactEmailInput" class="block text-sm font-semibold mb-2">Email Address *</label> <input type="email" id="contactEmailInput" required class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-slate-600 dark:bg-slate-800 focus:outline-none focus:border-blue-500 transition" placeholder="john@example.com">
-      </div>
-      <div class="mb-6"><label class="block text-sm font-semibold mb-2">Rate Your Experience</label>
-       <div class="flex gap-2"><button type="button" class="rating-star text-4xl text-gray-300 hover:text-yellow-400 transition" data-rating="1">★</button> <button type="button" class="rating-star text-4xl text-gray-300 hover:text-yellow-400 transition" data-rating="2">★</button> <button type="button" class="rating-star text-4xl text-gray-300 hover:text-yellow-400 transition" data-rating="3">★</button> <button type="button" class="rating-star text-4xl text-gray-300 hover:text-yellow-400 transition" data-rating="4">★</button> <button type="button" class="rating-star text-4xl text-gray-300 hover:text-yellow-400 transition" data-rating="5">★</button>
-       </div><input type="hidden" id="contactRating" value="0">
-      </div>
-      <div class="mb-6"><label for="contactMessageInput" class="block text-sm font-semibold mb-2">Your Message *</label> <textarea id="contactMessageInput" rows="5" required class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-slate-600 dark:bg-slate-800 focus:outline-none focus:border-blue-500 transition" placeholder="Share your thoughts, suggestions, or questions..."></textarea>
-      </div><button type="submit" id="contactSubmitBtn" class="w-full py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition flex items-center justify-center gap-3"> <span>Send Message</span> <i class="fas fa-paper-plane"></i> </button>
-      <div id="contactSuccess" class="hidden mt-6 p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-100 rounded-xl text-center"><i class="fas fa-check-circle text-2xl mb-2"></i>
-       <p class="font-semibold">Message sent successfully! Thank you for your feedback.</p>
-      </div>
-     </form>
-    </div>
-   </div>
-  </section><!-- Footer -->
-  <footer class="bg-slate-900 text-white py-16">
-   <div class="max-w-7xl mx-auto px-6">
-    <div class="grid md:grid-cols-4 gap-12 mb-12">
-     <div>
-      <div class="flex items-center gap-3 mb-6">
-       <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center text-2xl font-bold">
-        G
-       </div><span class="text-2xl font-bold font-serif">Explore Garut</span>
-      </div>
-      <p class="text-gray-400 mb-6">Your premium gateway to discovering the natural wonders and cultural richness of Garut, West Java.</p>
-      <div class="flex gap-3"><a href="#" class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center hover:scale-110 transition"> <i class="fab fa-facebook-f"></i> </a> <a href="#" class="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center hover:scale-110 transition"> <i class="fab fa-instagram"></i> </a> <a href="#" class="w-10 h-10 bg-blue-400 rounded-lg flex items-center justify-center hover:scale-110 transition"> <i class="fab fa-twitter"></i> </a> <a href="#" class="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center hover:scale-110 transition"> <i class="fab fa-youtube"></i> </a>
-      </div>
-     </div>
-     <div>
-      <h4 class="text-lg font-bold mb-6">Quick Links</h4>
-      <ul class="space-y-3">
-       <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
-       <li><a href="#destinations" class="text-gray-400 hover:text-white transition">Destinations</a></li>
-       <li><a href="#experiences" class="text-gray-400 hover:text-white transition">Experiences</a></li>
-       <li><a href="#events" class="text-gray-400 hover:text-white transition">Events</a></li>
-       <li><a href="#blog" class="text-gray-400 hover:text-white transition">Blog</a></li>
-      </ul>
-     </div>
-     <div>
-      <h4 class="text-lg font-bold mb-6">Services</h4>
-      <ul class="space-y-3">
-       <li><a href="#booking" class="text-gray-400 hover:text-white transition">Tour Booking</a></li>
-       <li><a href="#tickets" class="text-gray-400 hover:text-white transition">Tickets &amp; Pricing</a></li>
-       <li><a href="#virtual-tour" class="text-gray-400 hover:text-white transition">Virtual Tours</a></li>
-       <li><a href="#facilities" class="text-gray-400 hover:text-white transition">Facilities</a></li>
-       <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
-      </ul>
-     </div>
-     <div>
-      <h4 class="text-lg font-bold mb-6">Newsletter</h4>
-      <p class="text-gray-400 mb-4">Subscribe for travel tips and exclusive offers</p>
-      <form class="flex mb-4"><input type="email" placeholder="Your email" class="flex-1 px-4 py-2 rounded-l-lg bg-slate-800 border border-slate-700 focus:outline-none focus:border-blue-500 transition"> <button type="submit" class="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-r-lg font-semibold hover:shadow-lg transition"> Subscribe </button>
-      </form>
-      <p class="text-xs text-gray-500">We respect your privacy and will never share your data.</p>
-     </div>
-    </div>
-    <div class="border-t border-slate-800 pt-8 text-center">
-     <p id="copyrightText" class="text-gray-400">© 2024 Explore Garut. All rights reserved.</p>
-     <p class="text-gray-500 text-sm mt-2">Made with ❤️ for travelers worldwide</p>
-    </div>
-   </div>
-  </footer><!-- Chatbot Widget -->
-  <div class="chatbot-widget">
-   <div class="chatbot-button" id="chatbotBtn"><i class="fas fa-comments text-white text-3xl"></i>
-   </div>
-  </div><!-- Chatbot Window -->
-  <div class="chatbot-window" id="chatbotWindow">
-   <div class="bg-gradient-to-r from-blue-600 to-purple-600 p-6 flex items-center justify-between">
-    <div class="flex items-center gap-4">
-     <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-2xl">
-      🤖
-     </div>
-     <div>
-      <h3 class="font-bold text-lg">Travel Assistant</h3>
-      <p class="text-sm opacity-90">Online • Ready to help</p>
-     </div>
-    </div><button id="closeChatbot" class="text-3xl hover:scale-110 transition">×</button>
-   </div>
-   <div id="chatMessages" class="flex-1 p-6 overflow-y-auto bg-gray-50 dark:bg-slate-800 space-y-4">
-    <div class="bg-white dark:bg-slate-700 rounded-2xl p-4 shadow-lg max-w-[80%]">
-     <p class="text-sm">👋 Hello! I'm your Garut travel assistant. How can I help you plan your perfect trip today?</p>
-    </div>
-   </div>
-   <div class="p-4 bg-white dark:bg-slate-900 border-t dark:border-slate-700">
-    <form id="chatForm" class="flex gap-2"><input type="text" id="chatInput" placeholder="Type your question..." class="flex-1 px-4 py-3 rounded-full border border-gray-300 dark:border-slate-600 dark:bg-slate-800 focus:outline-none focus:border-blue-500 transition"> <button type="submit" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transition"> <i class="fas fa-paper-plane"></i> </button>
-    </form>
-   </div>
-  </div><!-- Video Modal -->
-  <div class="video-modal" id="videoModal"><button onclick="closeVideoModal()" class="absolute top-8 right-8 w-14 h-14 bg-white/10 backdrop-blur-lg rounded-full flex items-center justify-center text-white text-2xl hover:bg-white/20 transition z-50"> × </button>
-   <div class="video-container">
-    <div class="w-full h-full flex items-center justify-center text-white">
-     <div class="text-center">
-      <div class="text-8xl mb-6">
-       ▶️
-      </div>
-      <h3 class="text-3xl font-bold mb-4">Discover Garut</h3>
-      <p class="text-xl opacity-90">A cinematic journey through West Java's hidden paradise</p>
-     </div>
-    </div>
-   </div>
+    </footer>
   </div>
-  <script>
-    // Configuration & State
-    const defaultConfig = {
-      main_title: "Explore Garut",
-      hero_tagline: "Discover the Hidden Gems of West Java",
-      cta_button_text: "Start Exploring",
-      about_heading: "Welcome to Garut",
-      office_address: "Jl. Pembangunan No. 88, Garut, West Java 44151, Indonesia",
-      contact_email: "hello@exploregarut.id",
-      contact_phone: "+62 262 2800 888",
-      copyright_text: "© 2024 Explore Garut. All rights reserved.",
-      background_color: "#f8fafc",
-      surface_color: "#ffffff",
-      text_color: "#0f172a",
-      primary_action_color: "#0ea5e9",
-      secondary_action_color: "#8b5cf6",
-      font_family: "Inter",
-      font_size: 16
-    };
-
-    let config = { ...defaultConfig };
-    let currentLanguage = 'id';
-    let currentTestimonialIndex = 0;
-    let currentFilter = 'all';
-    let selectedRating = 0;
-    let counterAnimated = false;
-
-    // Destinations Data
-    const destinations = [
-      { id: 1, name: 'Mount Papandayan', category: 'adventure', emoji: '🏔️', description: 'Active volcano with stunning crater views and sulfur vents', price: 'Rp 25,000' },
-      { id: 2, name: 'Kawah Kamojang', category: 'nature', emoji: '♨️', description: 'Geothermal hot springs and steaming craters', price: 'Rp 20,000' },
-      { id: 3, name: 'Situ Bagendit', category: 'nature', emoji: '🏞️', description: 'Serene lake with legendary folklore and fishing', price: 'Rp 10,000' },
-      { id: 4, name: 'Candi Cangkuang', category: 'culture', emoji: '🛕', description: 'Ancient Hindu temple on a peaceful island', price: 'Rp 15,000' },
-      { id: 5, name: 'Cipanas Hot Springs', category: 'wellness', emoji: '💆', description: 'Natural therapeutic hot spring resort', price: 'Rp 30,000' },
-      { id: 6, name: 'Curug Orok Waterfall', category: 'nature', emoji: '💦', description: 'Hidden waterfall surrounded by lush forest', price: 'Rp 10,000' },
-      { id: 7, name: 'Kampung Sampireun', category: 'culture', emoji: '🏘️', description: 'Traditional Sundanese village resort', price: 'Rp 50,000' },
-      { id: 8, name: 'Gunung Guntur', category: 'adventure', emoji: '⛰️', description: 'Challenging mountain trek with 360° views', price: 'Rp 15,000' },
-      { id: 9, name: 'Dodol Factory Tour', category: 'culinary', emoji: '🍬', description: 'See how famous Garut dodol is made', price: 'Free' }
-    ];
-
-    // Testimonials Data
-    const testimonials = [
-      { name: 'Sarah Mitchell', location: 'Australia', avatar: 'SM', rating: 5, text: 'Absolutely breathtaking! Mount Papandayan exceeded all expectations. The sunrise view was worth the early morning hike.' },
-      { name: 'Ahmad Rizky', location: 'Jakarta, Indonesia', avatar: 'AR', rating: 5, text: 'Garut adalah surga tersembunyi! Pemandian air panas Cipanas sangat menenangkan setelah mendaki gunung.' },
-      { name: 'Maria Santos', location: 'Philippines', avatar: 'MS', rating: 5, text: 'The cultural experience at Kampung Sampireun was authentic and unforgettable. Highly recommend the traditional cuisine!' },
-      { name: 'David Chen', location: 'Singapore', avatar: 'DC', rating: 4, text: 'Beautiful destination with friendly locals. The dodol is delicious! Will definitely visit again.' },
-      { name: 'Lisa Anderson', location: 'United States', avatar: 'LA', rating: 5, text: 'One of the best travel experiences in Indonesia. The natural hot springs and volcanic landscapes are stunning.' }
-    ];
-
-    // Initialize SDKs
-    async function initializeApp() {
-      // Initialize Data SDK
-      if (window.dataSdk) {
-        const dataHandler = {
-          onDataChanged(data) {
-            console.log(`Data updated: ${data.length} records`);
-            // Update UI with stored testimonials if needed
-            const userTestimonials = data.filter(item => item.type === 'contact' && item.rating > 0);
-            console.log('User testimonials:', userTestimonials);
-          }
-        };
-        
-        const initResult = await window.dataSdk.init(dataHandler);
-        if (!initResult.isOk) {
-          console.error("Failed to initialize Data SDK");
-        }
-      }
-
-      // Initialize Element SDK
-      if (window.elementSdk) {
-        window.elementSdk.init({
-          defaultConfig,
-          onConfigChange: async (newConfig) => {
-            config = newConfig;
-            updateUIWithConfig();
-          },
-          mapToCapabilities: (cfg) => ({
-            recolorables: [
-              {
-                get: () => cfg.background_color || defaultConfig.background_color,
-                set: (value) => {
-                  cfg.background_color = value;
-                  window.elementSdk.setConfig({ background_color: value });
-                }
-              },
-              {
-                get: () => cfg.surface_color || defaultConfig.surface_color,
-                set: (value) => {
-                  cfg.surface_color = value;
-                  window.elementSdk.setConfig({ surface_color: value });
-                }
-              },
-              {
-                get: () => cfg.text_color || defaultConfig.text_color,
-                set: (value) => {
-                  cfg.text_color = value;
-                  window.elementSdk.setConfig({ text_color: value });
-                }
-              },
-              {
-                get: () => cfg.primary_action_color || defaultConfig.primary_action_color,
-                set: (value) => {
-                  cfg.primary_action_color = value;
-                  window.elementSdk.setConfig({ primary_action_color: value });
-                }
-              },
-              {
-                get: () => cfg.secondary_action_color || defaultConfig.secondary_action_color,
-                set: (value) => {
-                  cfg.secondary_action_color = value;
-                  window.elementSdk.setConfig({ secondary_action_color: value });
-                }
-              }
-            ],
-            borderables: [],
-            fontEditable: {
-              get: () => cfg.font_family || defaultConfig.font_family,
-              set: (value) => {
-                cfg.font_family = value;
-                window.elementSdk.setConfig({ font_family: value });
-              }
-            },
-            fontSizeable: {
-              get: () => cfg.font_size || defaultConfig.font_size,
-              set: (value) => {
-                cfg.font_size = value;
-                window.elementSdk.setConfig({ font_size: value });
-              }
-            }
-          }),
-          mapToEditPanelValues: (cfg) => new Map([
-            ["main_title", cfg.main_title || defaultConfig.main_title],
-            ["hero_tagline", cfg.hero_tagline || defaultConfig.hero_tagline],
-            ["cta_button_text", cfg.cta_button_text || defaultConfig.cta_button_text],
-            ["about_heading", cfg.about_heading || defaultConfig.about_heading],
-            ["office_address", cfg.office_address || defaultConfig.office_address],
-            ["contact_email", cfg.contact_email || defaultConfig.contact_email],
-            ["contact_phone", cfg.contact_phone || defaultConfig.contact_phone],
-            ["copyright_text", cfg.copyright_text || defaultConfig.copyright_text]
-          ])
-        });
-      }
-      
-      // Render initial content
-      renderDestinations();
-      renderTestimonials();
-      initializeScrollAnimations();
-    }
-
-    function updateUIWithConfig() {
-      // Update text content
-      const mainTitle = document.getElementById('mainTitle');
-      if (mainTitle) mainTitle.textContent = config.main_title || defaultConfig.main_title;
-      
-      const heroTagline = document.getElementById('heroTagline');
-      if (heroTagline) heroTagline.textContent = config.hero_tagline || defaultConfig.hero_tagline;
-      
-      const ctaButton = document.getElementById('ctaButton');
-      if (ctaButton) ctaButton.textContent = config.cta_button_text || defaultConfig.cta_button_text;
-      
-      const aboutHeading = document.getElementById('aboutHeading');
-      if (aboutHeading) aboutHeading.textContent = config.about_heading || defaultConfig.about_heading;
-      
-      const officeAddress = document.getElementById('officeAddress');
-      if (officeAddress) officeAddress.textContent = config.office_address || defaultConfig.office_address;
-      
-      const contactEmailDisplay = document.getElementById('contactEmailDisplay');
-      if (contactEmailDisplay) contactEmailDisplay.textContent = config.contact_email || defaultConfig.contact_email;
-      
-      const contactPhoneDisplay = document.getElementById('contactPhoneDisplay');
-      if (contactPhoneDisplay) contactPhoneDisplay.textContent = config.contact_phone || defaultConfig.contact_phone;
-      
-      const copyrightText = document.getElementById('copyrightText');
-      if (copyrightText) copyrightText.textContent = config.copyright_text || defaultConfig.copyright_text;
-
-      // Update colors
-      const bgColor = config.background_color || defaultConfig.background_color;
-      const surfaceColor = config.surface_color || defaultConfig.surface_color;
-      const textColor = config.text_color || defaultConfig.text_color;
-      const primaryColor = config.primary_action_color || defaultConfig.primary_action_color;
-      const secondaryColor = config.secondary_action_color || defaultConfig.secondary_action_color;
-
-      document.body.style.backgroundColor = bgColor;
-      document.body.style.color = textColor;
-      
-      // Update CSS variables
-      document.documentElement.style.setProperty('--primary', primaryColor);
-      document.documentElement.style.setProperty('--secondary', secondaryColor);
-
-      // Update font
-      const customFont = config.font_family || defaultConfig.font_family;
-      const baseFontStack = 'Inter, Arial, sans-serif';
-      document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
-
-      // Update font size
-      const baseSize = config.font_size || defaultConfig.font_size;
-      document.documentElement.style.fontSize = `${baseSize}px`;
-    }
-
-    // Render Destinations
-    function renderDestinations() {
-      const grid = document.getElementById('destinationsGrid');
-      const filtered = currentFilter === 'all' 
-        ? destinations 
-        : destinations.filter(d => d.category === currentFilter);
-
-      grid.innerHTML = filtered.map(dest => `
-        <div class="card-premium overflow-hidden animate-on-scroll">
-          <div class="h-64 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-8xl">
-            ${dest.emoji}
-          </div>
-          <div class="p-6">
-            <div class="flex items-center justify-between mb-3">
-              <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-xs font-semibold uppercase">
-                ${dest.category}
-              </span>
-              <span class="text-lg font-bold text-green-600">${dest.price}</span>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">${dest.name}</h3>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">${dest.description}</p>
-            <div class="flex gap-3">
-              <button class="flex-1 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg transition">
-                View Details
-              </button>
-              <button class="w-12 h-12 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 dark:hover:bg-slate-700 transition flex items-center justify-center">
-                <i class="fas fa-heart"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      `).join('');
-      
-      initializeScrollAnimations();
-    }
-
-    // Filter Destinations
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => {
-          b.classList.remove('active', 'bg-gradient-to-r', 'from-blue-600', 'to-purple-600', 'text-white');
-          b.classList.add('bg-gray-200', 'dark:bg-slate-700');
-        });
-        btn.classList.add('active', 'bg-gradient-to-r', 'from-blue-600', 'to-purple-600', 'text-white');
-        btn.classList.remove('bg-gray-200', 'dark:bg-slate-700');
-        
-        currentFilter = btn.dataset.category;
-        renderDestinations();
-      });
-    });
-
-    // Render Testimonials
-    function renderTestimonials() {
-      const slider = document.getElementById('testimonialSlider');
-      const dots = document.getElementById('testimonialDots');
-      
-      slider.innerHTML = testimonials.map((test, index) => `
-        <div class="testimonial-card">
-          <div class="card-premium p-8 md:p-12 text-center">
-            <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl font-bold">
-              ${test.avatar}
-            </div>
-            <div class="text-yellow-400 text-3xl mb-6">
-              ${'★'.repeat(test.rating)}${'☆'.repeat(5 - test.rating)}
-            </div>
-            <p class="text-xl italic text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-              "${test.text}"
-            </p>
-            <h4 class="text-2xl font-bold mb-2">${test.name}</h4>
-            <p class="text-gray-500">${test.location}</p>
-          </div>
-        </div>
-      `).join('');
-      
-      dots.innerHTML = testimonials.map((_, index) => `
-        <button class="w-3 h-3 rounded-full transition ${index === 0 ? 'bg-blue-600 w-8' : 'bg-gray-300'}" data-index="${index}"></button>
-      `).join('');
-      
-      // Dot click handlers
-      document.querySelectorAll('#testimonialDots button').forEach(dot => {
-        dot.addEventListener('click', () => {
-          currentTestimonialIndex = parseInt(dot.dataset.index);
-          updateTestimonialPosition();
-        });
-      });
-    }
-
-    function updateTestimonialPosition() {
-      const slider = document.getElementById('testimonialSlider');
-      slider.style.transform = `translateX(-${currentTestimonialIndex * 100}%)`;
-      
-      // Update dots
-      document.querySelectorAll('#testimonialDots button').forEach((dot, index) => {
-        if (index === currentTestimonialIndex) {
-          dot.classList.add('bg-blue-600', 'w-8');
-          dot.classList.remove('bg-gray-300');
-        } else {
-          dot.classList.remove('bg-blue-600', 'w-8');
-          dot.classList.add('bg-gray-300');
-        }
-      });
-    }
-
-    // Testimonial Navigation
-    document.getElementById('prevTestimonial').addEventListener('click', () => {
-      currentTestimonialIndex = (currentTestimonialIndex - 1 + testimonials.length) % testimonials.length;
-      updateTestimonialPosition();
-    });
-
-    document.getElementById('nextTestimonial').addEventListener('click', () => {
-      currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
-      updateTestimonialPosition();
-    });
-
-    // Auto-rotate testimonials
-    setInterval(() => {
-      currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
-      updateTestimonialPosition();
-    }, 6000);
-
-    // Counter Animation
-    function animateCounters() {
-      if (counterAnimated) return;
-      
-      const counters = document.querySelectorAll('.counter-stat');
-      counters.forEach(counter => {
-        const target = parseInt(counter.dataset.target);
-        const duration = 2000;
-        const increment = target / (duration / 16);
-        let current = 0;
-        
-        const updateCounter = () => {
-          current += increment;
-          if (current < target) {
-            counter.textContent = Math.floor(current).toLocaleString();
-            requestAnimationFrame(updateCounter);
-          } else {
-            counter.textContent = target.toLocaleString();
-          }
-        };
-        
-        updateCounter();
-      });
-      
-      counterAnimated = true;
-    }
-
-    // Scroll Animations
-    function initializeScrollAnimations() {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animated');
-            
-            // Animate counters when they come into view
-            if (entry.target.querySelector('.counter-stat')) {
-              animateCounters();
-            }
-          }
-        });
-      }, { threshold: 0.1 });
-
-      document.querySelectorAll('.animate-on-scroll').forEach(el => {
-        observer.observe(el);
-      });
-    }
-
-    // Navbar Scroll Effect
-    window.addEventListener('scroll', () => {
-      const navbar = document.querySelector('.navbar');
-      if (window.scrollY > 100) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    });
-
-    // Dark Mode Toggle
-    document.getElementById('darkModeToggle').addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      const icon = document.querySelector('#darkModeToggle i');
-      icon.classList.toggle('fa-moon');
-      icon.classList.toggle('fa-sun');
-    });
-
-    // Language Switcher
-    document.getElementById('langSwitch').addEventListener('click', () => {
-      currentLanguage = currentLanguage === 'id' ? 'en' : 'id';
-      const flag = document.getElementById('currentLangFlag');
-      const code = document.getElementById('currentLangCode');
-      
-      if (currentLanguage === 'id') {
-        flag.textContent = '🇮🇩';
-        code.textContent = 'ID';
-      } else {
-        flag.textContent = '🇬🇧';
-        code.textContent = 'EN';
-      }
-    });
-
-    // Sidebar
-    document.getElementById('sidebarToggle').addEventListener('click', () => {
-      document.getElementById('sidebar').classList.add('active');
-      document.getElementById('sidebarOverlay').classList.add('active');
-    });
-
-    document.getElementById('closeSidebar').addEventListener('click', () => {
-      document.getElementById('sidebar').classList.remove('active');
-      document.getElementById('sidebarOverlay').classList.remove('active');
-    });
-
-    document.getElementById('sidebarOverlay').addEventListener('click', () => {
-      document.getElementById('sidebar').classList.remove('active');
-      document.getElementById('sidebarOverlay').classList.remove('active');
-    });
-
-    // Close sidebar when clicking links
-    document.querySelectorAll('.sidebar-link').forEach(link => {
-      link.addEventListener('click', () => {
-        document.getElementById('sidebar').classList.remove('active');
-        document.getElementById('sidebarOverlay').classList.remove('active');
-      });
-    });
-
-    // Search Functionality
-    function performSearch() {
-      const query = document.getElementById('heroSearch').value.toLowerCase();
-      if (!query) return;
-      
-      const results = destinations.filter(d => 
-        d.name.toLowerCase().includes(query) || 
-        d.description.toLowerCase().includes(query) ||
-        d.category.toLowerCase().includes(query)
-      );
-      
-      if (results.length > 0) {
-        document.getElementById('destinations').scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-
-    document.getElementById('heroSearch').addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') {
-        performSearch();
-      }
-    });
-
-    // Video Modal
-    function openVideoModal() {
-      document.getElementById('videoModal').classList.add('active');
-    }
-
-    function closeVideoModal() {
-      document.getElementById('videoModal').classList.remove('active');
-    }
-
-    // Rating Stars
-    document.querySelectorAll('.rating-star').forEach(star => {
-      star.addEventListener('click', (e) => {
-        e.preventDefault();
-        selectedRating = parseInt(star.dataset.rating);
-        document.getElementById('contactRating').value = selectedRating;
-        
-        const stars = document.querySelectorAll('.rating-star');
-        stars.forEach((s, index) => {
-          if (index < selectedRating) {
-            s.classList.remove('text-gray-300');
-            s.classList.add('text-yellow-400');
-          } else {
-            s.classList.add('text-gray-300');
-            s.classList.remove('text-yellow-400');
-          }
-        });
-      });
-    });
-
-    // Contact Form
-    document.getElementById('contactForm').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      
-      if (!window.dataSdk) {
-        console.error("Data SDK not available");
-        return;
-      }
-      
-      const submitBtn = document.getElementById('contactSubmitBtn');
-      const successMsg = document.getElementById('contactSuccess');
-      const originalContent = submitBtn.innerHTML;
-      
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span>Sending...</span> <div class="spinner"></div>';
-      submitBtn.classList.add('loading');
-      
-      const formData = {
-        type: 'contact',
-        name: document.getElementById('contactName').value,
-        email: document.getElementById('contactEmailInput').value,
-        rating: selectedRating,
-        message: document.getElementById('contactMessageInput').value,
-        timestamp: new Date().toISOString()
-      };
-      
-      const result = await window.dataSdk.create(formData);
-      
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = originalContent;
-      submitBtn.classList.remove('loading');
-      
-      if (result.isOk) {
-        successMsg.classList.remove('hidden');
-        document.getElementById('contactForm').reset();
-        selectedRating = 0;
-        document.querySelectorAll('.rating-star').forEach(s => {
-          s.classList.add('text-gray-300');
-          s.classList.remove('text-yellow-400');
-        });
-        
-        setTimeout(() => {
-          successMsg.classList.add('hidden');
-        }, 5000);
-      } else {
-        const errorDiv = document.createElement('div');
-        errorDiv.className = 'mt-6 p-4 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-100 rounded-xl text-center';
-        errorDiv.innerHTML = '<p class="font-semibold">Failed to send message. Please try again.</p>';
-        document.getElementById('contactForm').appendChild(errorDiv);
-        
-        setTimeout(() => {
-          errorDiv.remove();
-        }, 5000);
-      }
-    });
-
-    // Booking Form
-    document.getElementById('bookingForm').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      
-      if (!window.dataSdk) {
-        console.error("Data SDK not available");
-        return;
-      }
-      
-      const submitBtn = document.getElementById('bookingSubmitBtn');
-      const successMsg = document.getElementById('bookingSuccess');
-      const originalContent = submitBtn.innerHTML;
-      
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span>Processing...</span> <div class="spinner"></div>';
-      submitBtn.classList.add('loading');
-      
-      const formData = {
-        type: 'booking',
-        name: document.getElementById('bookingName').value,
-        email: document.getElementById('bookingEmail').value,
-        phone: document.getElementById('bookingPhone').value,
-        date: document.getElementById('bookingDate').value,
-        destination: document.getElementById('bookingDestination').value,
-        guests: parseInt(document.getElementById('bookingGuests').value),
-        message: document.getElementById('bookingMessage').value,
-        timestamp: new Date().toISOString()
-      };
-      
-      const result = await window.dataSdk.create(formData);
-      
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = originalContent;
-      submitBtn.classList.remove('loading');
-      
-      if (result.isOk) {
-        successMsg.classList.remove('hidden');
-        document.getElementById('bookingForm').reset();
-        
-        setTimeout(() => {
-          successMsg.classList.add('hidden');
-        }, 5000);
-      } else {
-        const errorDiv = document.createElement('div');
-        errorDiv.className = 'mt-6 p-4 bg-red-500 rounded-xl text-center';
-        errorDiv.innerHTML = '<p class="font-semibold">Failed to submit booking. Please try again.</p>';
-        document.getElementById('bookingForm').appendChild(errorDiv);
-        
-        setTimeout(() => {
-          errorDiv.remove();
-        }, 5000);
-      }
-    });
-
-    // Chatbot
-    document.getElementById('chatbotBtn').addEventListener('click', () => {
-      document.getElementById('chatbotWindow').classList.add('active');
-    });
-
-    document.getElementById('closeChatbot').addEventListener('click', () => {
-      document.getElementById('chatbotWindow').classList.remove('active');
-    });
-
-    document.getElementById('chatForm').addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      const input = document.getElementById('chatInput');
-      const message = input.value.trim();
-      
-      if (message) {
-        const chatMessages = document.getElementById('chatMessages');
-        
-        // User message
-        const userMsg = document.createElement('div');
-        userMsg.className = 'flex justify-end';
-        userMsg.innerHTML = `
-          <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl px-4 py-3 max-w-[80%] shadow-lg">
-            <p class="text-sm">${message}</p>
-          </div>
-        `;
-        chatMessages.appendChild(userMsg);
-        
-        // Bot response
-        setTimeout(() => {
-          let response = "I'm here to help! Could you please provide more details about your question?";
-          
-          const lowerMsg = message.toLowerCase();
-          
-          if (lowerMsg.includes('price') || lowerMsg.includes('harga') || lowerMsg.includes('ticket')) {
-            response = "Ticket prices vary by destination. Most attractions range from Rp 10,000 to Rp 50,000. Check our Tickets & Schedule section for detailed pricing!";
-          } else if (lowerMsg.includes('open') || lowerMsg.includes('jam') || lowerMsg.includes('hour')) {
-            response = "Most destinations are open from 08:00 - 17:00 on weekdays, and 07:00 - 18:00 on weekends. Some hot springs operate 24/7!";
-          } else if (lowerMsg.includes('hotel') || lowerMsg.includes('stay') || lowerMsg.includes('accommodation')) {
-            response = "Garut offers various accommodations from luxury resorts to budget homestays. Popular areas include Cipanas and downtown Garut. Would you like specific recommendations?";
-          } else if (lowerMsg.includes('food') || lowerMsg.includes('culinary') || lowerMsg.includes('restaurant')) {
-            response = "Don't miss trying dodol Garut, lamb satay, and local Sundanese cuisine! Check out our Culinary section for restaurant recommendations.";
-          } else if (lowerMsg.includes('weather') || lowerMsg.includes('cuaca')) {
-            response = "Garut has a pleasant tropical climate. Best to visit during dry season (April-October). Current temperature is around 24°C. Always bring a light jacket for mountain areas!";
-          }
-          
-          const botMsg = document.createElement('div');
-          botMsg.innerHTML = `
-            <div class="bg-white dark:bg-slate-700 rounded-2xl px-4 py-3 shadow-lg max-w-[80%]">
-              <p class="text-sm">${response}</p>
-            </div>
-          `;
-          chatMessages.appendChild(botMsg);
-          chatMessages.scrollTop = chatMessages.scrollHeight;
-        }, 800);
-        
-        input.value = '';
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-      }
-    });
-
-    // Social Share
-    function shareToSocial(platform) {
-      const url = encodeURIComponent(window.location.href);
-      const text = encodeURIComponent('Check out Explore Garut - Your gateway to West Java\'s natural wonders!');
-      
-      let shareUrl = '';
-      
-      switch(platform) {
-        case 'facebook':
-          shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
-          break;
-        case 'twitter':
-          shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
-          break;
-        case 'whatsapp':
-          shareUrl = `https://wa.me/?text=${text}%20${url}`;
-          break;
-        case 'linkedin':
-          shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
-          break;
-        case 'instagram':
-          // Instagram doesn't support direct sharing via URL
-          const notification = document.createElement('div');
-          notification.className = 'fixed bottom-24 right-8 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-4 rounded-xl shadow-2xl z-50';
-          notification.innerHTML = '<p class="font-semibold">📱 Share on Instagram via mobile app!</p>';
-          document.body.appendChild(notification);
-          setTimeout(() => notification.remove(), 3000);
-          return;
-      }
-      
-      if (shareUrl) {
-        window.open(shareUrl, '_blank', 'noopener,noreferrer,width=600,height=400');
-      }
-    }
-
-    // Smooth Scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-
-    // Initialize App
-    document.addEventListener('DOMContentLoaded', () => {
-      initializeApp();
-    });
-  </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a109435b17bea83',t:'MTc2MzU2NDQ0NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
